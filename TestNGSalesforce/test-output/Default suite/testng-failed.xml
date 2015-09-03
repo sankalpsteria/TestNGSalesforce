@@ -5,13 +5,10 @@
     <classes>
       <class name="HomePackage.HomeClass">
         <methods>
-          <include name="AddCustomerPack"/>
           <include name="closeBrowser"/>
           <include name="ConvertLead"/>
-          <include name="AddCustomerPackSelfie"/>
           <include name="openSalesforce"/>
           <include name="AddAddress"/>
-          <include name="verifyLeadCreated"/>
           <include name="AddJobLead"/>
         </methods>
       </class> <!-- HomePackage.HomeClass -->

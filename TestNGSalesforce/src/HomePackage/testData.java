@@ -20,9 +20,14 @@ public class testData {
     String JobRN1 = randomizer.randomjrn();
     String PackStandard199 = "Standard - £199";
     String PackSelfie159 = "Self Install - £159";
+    String PackRHCReady99 = "RHC Ready (Hub Only) - £99";
     String PackFrame = "Lemon Punch - Frame - £19.99";
+    String PackFrame1 = "Luscious Lime - Frame - £19.99";
+    String PackFrame2 = "Moroccan Flame - Frame - £19.99";
     String PackHAH2 = "Hive 2 - Standard £249";
     String PackHAH2Selfie = "Hive 2 - Self Install - £179";
+    String PackHAH2NoDeliverySelfie = "Hive 2 - No Delivery Self Install - £179";
+    String PackStand = "Hive 2 - Stand - £19.99";
     String PackHAHDD = "HAH - £5 per month";
     String PackHAHTEST = "TEST DONOT USE HAH DELIVERY ONLY";
     String AddressLine1 = randomizer.AddressL1();
@@ -32,9 +37,9 @@ public class testData {
     String CardNumber = "4263971921001307";
     String CardSecurity = "123";
     String ScheduleDate = randomizer.futuredate();
-    
+    String VoucherTradeRetail = "TRADE";
     
     Date date = new Date();
-    String modifiedDate= new SimpleDateFormat("yyyy-MM-dd").format(date);
+    String modifiedDate= new SimpleDateFormat("dd/MM/yyyy").format(date);
 
 }

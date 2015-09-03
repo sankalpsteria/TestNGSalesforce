@@ -26,7 +26,7 @@ public class HomeClass {
 	public void loginSalesforce(){
 		//Identify and Enter Username
 		WebElement UserName = driver.findElement(By.id("username"));
-		UserName.sendKeys(env.StageUsername);
+		UserName.sendKeys(env.TestUsername);
 
 		//Identify and Enter Password
 		WebElement Password = driver.findElement(By.id("password"));
@@ -133,11 +133,14 @@ public class HomeClass {
 		Assert.assertEquals(env.actualTitle, env.CustomerPackEditTitle);
 
 		WebElement Pack = driver.findElement(By.xpath(".//*[@id='CF00N20000009XIx9']"));
-		Pack.sendKeys(testd.PackHAH2);
+		Pack.sendKeys(testd.PackStandard199);
 
 		//Select PackOption= new Select(driver.findElement(By.xpath(".//*[@id='00N20000009YYPs']")));
 		//PackOption.selectByVisibleText("Single Channel"); 
-
+		
+	//	WebElement Voucher = driver.findElement(By.xpath(".//*[@id='CF00N20000009XIxK']"));
+	//	Voucher.sendKeys(testd.VoucherTradeRetail);
+		
 		WebElement CustomerPackSave = driver.findElement(By.xpath(".//*[@id='topButtonRow']/input[1]"));
 		CustomerPackSave.click();
 
@@ -164,7 +167,7 @@ public class HomeClass {
 		WebElement Pack = driver.findElement(By.xpath(".//*[@id='CF00N20000009XIx9']"));
 		Pack.sendKeys(testd.PackHAH2Selfie);
 
-			Select PackOption= new Select(driver.findElement(By.xpath(".//*[@id='00N20000009YYPs']")));
+		Select PackOption= new Select(driver.findElement(By.xpath(".//*[@id='00N20000009YYPs']")));
 		PackOption.selectByVisibleText("Single Channel"); 
 
 		WebElement CustomerPackSave = driver.findElement(By.xpath(".//*[@id='topButtonRow']/input[1]"));
@@ -181,6 +184,65 @@ public class HomeClass {
 		Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ salesforce.com - Unlimited Edition");
 
 	}
+	
+	/*@Test(priority = 4)
+	public void AddCustomerPackSelfie2(){
+
+		WebElement LeadNewCustomerPack = driver.findElement(By.name("new_customer_pack"));
+		LeadNewCustomerPack.click();
+
+		env.actualTitle = driver.getTitle();
+		Assert.assertEquals(env.actualTitle, env.CustomerPackEditTitle);
+
+		WebElement Pack = driver.findElement(By.xpath(".//*[@id='CF00N20000009XIx9']"));
+		Pack.sendKeys(testd.PackFrame1);
+
+		//Select PackOption= new Select(driver.findElement(By.xpath(".//*[@id='00N20000009YYPs']")));
+		//PackOption.selectByVisibleText("Single Channel"); 
+
+		WebElement CustomerPackSave = driver.findElement(By.xpath(".//*[@id='topButtonRow']/input[1]"));
+		CustomerPackSave.click();
+
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		env.actualTitle = driver.getTitle();
+		Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ salesforce.com - Unlimited Edition");
+
+	}
+	@Test(priority = 4)
+	public void AddCustomerPackSelfie1(){
+
+		WebElement LeadNewCustomerPack = driver.findElement(By.name("new_customer_pack"));
+		LeadNewCustomerPack.click();
+
+		env.actualTitle = driver.getTitle();
+		Assert.assertEquals(env.actualTitle, env.CustomerPackEditTitle);
+
+		WebElement Pack = driver.findElement(By.xpath(".//*[@id='CF00N20000009XIx9']"));
+		Pack.sendKeys(testd.PackFrame2);
+
+		//Select PackOption= new Select(driver.findElement(By.xpath(".//*[@id='00N20000009YYPs']")));
+		//PackOption.selectByVisibleText("Single Channel"); 
+
+		WebElement CustomerPackSave = driver.findElement(By.xpath(".//*[@id='topButtonRow']/input[1]"));
+		CustomerPackSave.click();
+
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		env.actualTitle = driver.getTitle();
+		Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ salesforce.com - Unlimited Edition");
+
+	}*/
 
 	@Test(priority = 5)
 	public void AddAddress(){
@@ -246,9 +308,9 @@ public class HomeClass {
 
 		// WebElement JobAddress = driver.findElement(By.xpath(".//*[@id='CF00N20000009XwH8']"));
 		//JobAddress.sendKeys(testd.AddressLine1);
-        System.out.println(testd.ScheduleDate);
+        System.out.println(testd.modifiedDate);
 		WebElement JobSchDate = driver.findElement(By.xpath(".//*[@id='00N200000096fOo']"));
-		JobSchDate.sendKeys(testd.ScheduleDate);
+		JobSchDate.sendKeys(testd.modifiedDate);
 
 		WebElement JobSchSlot = driver.findElement(By.xpath(".//*[@id='00N200000096fOy']"));
 		JobSchSlot.sendKeys("AM");

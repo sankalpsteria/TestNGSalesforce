@@ -25,4 +25,6 @@ public class environments {
 		public String TestPassword= "Liverpool98";
 		public String StageUsername= "sfdcsysadmin@bgch.co.uk.octopus.staging";
 		public String StagePassword= "Liverpool98";
+		public String UatUsername= "sfdcsysadmin@bgch.co.uk.octopus.uat";
+		public String UatPassword= "Liverpool98";
 }
