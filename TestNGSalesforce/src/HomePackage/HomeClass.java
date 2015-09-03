@@ -164,8 +164,8 @@ public class HomeClass {
 		env.actualTitle = driver.getTitle();
 		Assert.assertEquals(env.actualTitle, env.CustomerPackEditTitle);
 
-		WebElement Pack = driver.findElement(By.xpath(".//*[@id='CF00N20000009XIx9']"));
-		Pack.sendKeys(testd.PackHAH2Selfie);
+		//WebElement Pack = driver.findElement(By.xpath(".//*[@id='CF00N20000009XIx9']"));
+		//Pack.sendKeys(testd.PackHAH2Selfie);
 
 		Select PackOption= new Select(driver.findElement(By.xpath(".//*[@id='00N20000009YYPs']")));
 		PackOption.selectByVisibleText("Single Channel"); 
