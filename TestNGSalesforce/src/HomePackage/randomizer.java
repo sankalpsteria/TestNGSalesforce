@@ -24,7 +24,7 @@ public class randomizer {
 		   { 
 		      frequencies = new CharacterFrequency[] 
 		      { 
-		         new CharacterFrequency('a', 0.8f), 
+		         new CharacterFrequency('f', 0.8f), 
 		         new CharacterFrequency('b', 0.4f), 
 		         new CharacterFrequency('c', 0.2f), 
 		         new CharacterFrequency('d', 0.6f),

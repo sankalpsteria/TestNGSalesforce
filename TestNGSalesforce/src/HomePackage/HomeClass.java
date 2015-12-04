@@ -12,6 +12,7 @@ public class HomeClass {
 	WebDriver driver = new FirefoxDriver(); 
 	environments env = new environments();
 	testData testd = new testData();
+	
 
 	@BeforeTest
 	public void openSalesforce() {
@@ -30,7 +31,7 @@ public class HomeClass {
 
 		//Identify and Enter Password
 		WebElement Password = driver.findElement(By.id("password"));
-		Password.sendKeys(env.StagePassword);
+		Password.sendKeys(env.TestPassword);
 
 		//Identify Login button
 		WebElement LoginButton = driver.findElement(By.id("Login"));
@@ -80,7 +81,6 @@ public class HomeClass {
 
 		WebElement mobile = driver.findElement(By.xpath(".//*[@id='lea9']"));
 		mobile.sendKeys(testd.Mobile);
-
 		WebElement ucrn = driver.findElement(By.xpath(".//*[@id='00N20000009XwH9']"));
 		ucrn.sendKeys(testd.Mobile);
 
@@ -118,12 +118,12 @@ public class HomeClass {
 	public void verifyLeadCreated(){
 
 		env.actualTitle = driver.getTitle();
-		Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ salesforce.com - Unlimited Edition");
+		Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ Salesforce - Unlimited Edition");
 		//Add More code to verify some values autopopulated on the lead
 	}
 
 
-	@Test(priority = 3)
+@Test(priority = 3)
 	public void AddCustomerPack(){
 
 		WebElement LeadNewCustomerPack = driver.findElement(By.name("new_customer_pack"));
@@ -133,13 +133,13 @@ public class HomeClass {
 		Assert.assertEquals(env.actualTitle, env.CustomerPackEditTitle);
 
 		WebElement Pack = driver.findElement(By.xpath(".//*[@id='CF00N20000009XIx9']"));
-		Pack.sendKeys(testd.PackStandard199);
+		Pack.sendKeys(testd.PackHAH2);
 
 		//Select PackOption= new Select(driver.findElement(By.xpath(".//*[@id='00N20000009YYPs']")));
 		//PackOption.selectByVisibleText("Single Channel"); 
 		
-	//	WebElement Voucher = driver.findElement(By.xpath(".//*[@id='CF00N20000009XIxK']"));
-	//	Voucher.sendKeys(testd.VoucherTradeRetail);
+		//WebElement Voucher = driver.findElement(By.xpath(".//*[@id='CF00N20000009XIxK']"));
+	    //Voucher.sendKeys(testd.VoucherTradeRetail);
 		
 		WebElement CustomerPackSave = driver.findElement(By.xpath(".//*[@id='topButtonRow']/input[1]"));
 		CustomerPackSave.click();
@@ -150,12 +150,11 @@ public class HomeClass {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		env.actualTitle = driver.getTitle();
-		Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ salesforce.com - Unlimited Edition");
+	//	env.actualTitle = driver.getTitle();
+	//	Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ Salesforce - Unlimited Edition");
 
 	}
-
-	@Test(priority = 4)
+@Test(priority = 4)
 	public void AddCustomerPackSelfie(){
 
 		WebElement LeadNewCustomerPack = driver.findElement(By.name("new_customer_pack"));
@@ -164,11 +163,11 @@ public class HomeClass {
 		env.actualTitle = driver.getTitle();
 		Assert.assertEquals(env.actualTitle, env.CustomerPackEditTitle);
 
-		//WebElement Pack = driver.findElement(By.xpath(".//*[@id='CF00N20000009XIx9']"));
-		//Pack.sendKeys(testd.PackHAH2Selfie);
+		WebElement Pack = driver.findElement(By.xpath(".//*[@id='CF00N20000009XIx9']"));
+		Pack.sendKeys(testd.PackFrame);
 
-		Select PackOption= new Select(driver.findElement(By.xpath(".//*[@id='00N20000009YYPs']")));
-		PackOption.selectByVisibleText("Single Channel"); 
+		//Select PackOption= new Select(driver.findElement(By.xpath(".//*[@id='00N20000009YYPs']")));
+		//PackOption.selectByVisibleText("Single Channel"); 
 
 		WebElement CustomerPackSave = driver.findElement(By.xpath(".//*[@id='topButtonRow']/input[1]"));
 		CustomerPackSave.click();
@@ -181,7 +180,7 @@ public class HomeClass {
 		}
 
 		env.actualTitle = driver.getTitle();
-		Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ salesforce.com - Unlimited Edition");
+		Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ Salesforce - Unlimited Edition");
 
 	}
 	
@@ -211,7 +210,7 @@ public class HomeClass {
 		}
 
 		env.actualTitle = driver.getTitle();
-		Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ salesforce.com - Unlimited Edition");
+		Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ Salesforce - Unlimited Edition");
 
 	}
 	@Test(priority = 4)
@@ -240,7 +239,7 @@ public class HomeClass {
 		}
 
 		env.actualTitle = driver.getTitle();
-		Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ salesforce.com - Unlimited Edition");
+		Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ Salesforce - Unlimited Edition");
 
 	}*/
 
@@ -280,21 +279,29 @@ public class HomeClass {
 		WebElement AddressSave = driver.findElement(By.xpath(".//*[@id='pgAddress:frmMain:pgbAddressDetail:j_id28']/input[1]"));
 		AddressSave.click();
 		try {
-			Thread.sleep(4000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		/*Boolean CustomerPackRelatedList = driver.findElement(By.linkText("HAH - £199")).isDisplayed();
-		 	Assert.assertEquals(CustomerPackRelatedList, "True");
-		 	System.out.println(CustomerPackRelatedList);*/
+		
+		WebElement AddressLeadlink = driver.findElement(By.linkText(testd.Fname+" "+testd.Lname+", "+testd.Fname+" "+testd.Lname));
+		AddressLeadlink.click();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
 		env.actualTitle = driver.getTitle();
-		Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ salesforce.com - Unlimited Edition");
+		Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ Salesforce - Unlimited Edition");
 
 
 	}
 
 	@Test(priority = 6)
+
 	public void AddJobLead(){
 
 		WebElement LeadNewJob = driver.findElement(By.name("newjobfromleadandopportunity"));
@@ -302,68 +309,41 @@ public class HomeClass {
 
 		env.actualTitle = driver.getTitle();
 		Assert.assertEquals(env.actualTitle, env.JobEditTitle);
-
+		
+		Select JobStatus = new Select(driver.findElement(By.xpath(".//*[@id='00N20000009YXJ5']")));
+		JobStatus.selectByValue("Scheduled");
+						
+		Select JobSchSlot = new Select(driver.findElement(By.xpath(".//*[@id='00N200000096fOy']")));
+		JobSchSlot.selectByValue("AM");
+				
 		WebElement JobRefNum = driver.findElement(By.xpath(".//*[@id='00N20000008NxhZ']"));
 		JobRefNum.sendKeys(testd.JobRN);
-
-		// WebElement JobAddress = driver.findElement(By.xpath(".//*[@id='CF00N20000009XwH8']"));
-		//JobAddress.sendKeys(testd.AddressLine1);
-        System.out.println(testd.modifiedDate);
+				
+        //System.out.println(testd.modifiedDate);
 		WebElement JobSchDate = driver.findElement(By.xpath(".//*[@id='00N200000096fOo']"));
 		JobSchDate.sendKeys(testd.modifiedDate);
-
-		WebElement JobSchSlot = driver.findElement(By.xpath(".//*[@id='00N200000096fOy']"));
-		JobSchSlot.sendKeys("AM");
-
+		System.out.println(testd.modifiedDate);
+		
 		WebElement JobSave = driver.findElement(By.xpath(".//*[@id='topButtonRow']/input[1]"));
 		JobSave.click();
 
 		try {
-			Thread.sleep(4000);
+			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		
+		WebElement JobLeadLink = driver.findElement(By.linkText(testd.Fname+" "+testd.Lname+", "+testd.Fname+" "+testd.Lname));
+		JobLeadLink.click();
 		env.actualTitle = driver.getTitle();
-		Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ salesforce.com - Unlimited Edition");
+		Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ Salesforce - Unlimited Edition");
 
 	} 
 
-	/*
-   @Test(priority = 6)
-	public void AddJobLead1(){
-
-		WebElement LeadNewJob = driver.findElement(By.name("newjobfromleadandopportunity"));
-			LeadNewJob.click();
-
-		 env.actualTitle = driver.getTitle();
-		 	Assert.assertEquals(env.actualTitle, env.JobEditTitle);
-
-		 WebElement JobRefNum = driver.findElement(By.xpath(".//*[@id='00N20000008NxhZ']"));
-		 JobRefNum.sendKeys(testd.JobRN1);
-
-		// WebElement JobAddress = driver.findElement(By.xpath(".//*[@id='CF00N20000009XwH8']"));
-		 //JobAddress.sendKeys(testd.AddressLine1);
-
-		 WebElement JobSchDate = driver.findElement(By.xpath(".//*[@id='00N200000096fOo']"));
-		 JobSchDate.sendKeys(testd.ScheduleDate);
-
-		 WebElement JobSchSlot = driver.findElement(By.xpath(".//*[@id='00N200000096fOy']"));
-		 JobSchSlot.sendKeys("AM");
-
-		 WebElement JobSave = driver.findElement(By.xpath(".//*[@id='topButtonRow']/input[1]"));
-		 	JobSave.click();
-
-		 	 try {
-					Thread.sleep(4000);
-				} catch (InterruptedException e) {
-				  e.printStackTrace();
-				}
-		 	env.actualTitle = driver.getTitle();
-			Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ salesforce.com - Unlimited Edition");
-
-	} */
-	/*
-   @Test(priority = 7)
+	
+  
+	
+ /*  @Test(priority = 7)
 	public void ProcessPayment(){
 
 		WebElement ProcessPaymentLead = driver.findElement(By.name("processpayment"));
@@ -401,7 +381,7 @@ public class HomeClass {
 				  e.printStackTrace();
 				}
 		 	env.actualTitle = driver.getTitle();
-			Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ salesforce.com - Unlimited Edition");
+			Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ Salesforce - Unlimited Edition");
 
 	} 
 	 */
@@ -418,17 +398,17 @@ public class HomeClass {
 			e.printStackTrace();
 		}
 		env.actualTitle = driver.getTitle();
-		Assert.assertEquals(env.actualTitle, "Account: "+testd.Fname+" "+testd.Lname+" ~ salesforce.com - Unlimited Edition");
+		Assert.assertEquals(env.actualTitle, "Account: "+testd.Fname+" "+testd.Lname+" ~ Salesforce - Unlimited Edition");
 		System.out.println(env.actualTitle);
 
-		/*//Code to fetch ID	
+		//Code to fetch ID	
 		env.CurrentUrl= driver.getCurrentUrl();
 		//System.out.println(env.CurrentUrl);
-		String Id= env.CurrentUrl.replace("https://emea.salesforce.com/","").replace("https://cs18.salesforce.com/","").substring(0,15);
-		//String Trid= Id.substring(0,15);
+		String Id= env.CurrentUrl.replace("https://emea.salesforce.com/","").replace("https://cs18.salesforce.com/","").replace("https://cs17.salesforce.com/","").replace("https://cs10.salesforce.com/","").substring(0,15);
+		String Trid= Id.substring(0,15);
 		System.out.println("ID is: "+Id);
 
-		 */
+		 
 
 	}
 
