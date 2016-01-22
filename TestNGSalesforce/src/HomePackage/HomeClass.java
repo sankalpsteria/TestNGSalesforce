@@ -135,11 +135,11 @@ public class HomeClass {
 		WebElement Pack = driver.findElement(By.xpath(".//*[@id='CF00N20000009XIx9']"));
 		Pack.sendKeys(testd.PackHAH2);
 
-		//Select PackOption= new Select(driver.findElement(By.xpath(".//*[@id='00N20000009YYPs']")));
-		//PackOption.selectByVisibleText("Single Channel"); 
+	//	Select PackOption= new Select(driver.findElement(By.xpath(".//*[@id='00N20000009YYPs']")));
+	//	PackOption.selectByVisibleText("Dual Channel"); 
 		
-		//WebElement Voucher = driver.findElement(By.xpath(".//*[@id='CF00N20000009XIxK']"));
-	    //Voucher.sendKeys(testd.VoucherTradeRetail);
+	  //  WebElement Voucher = driver.findElement(By.xpath(".//*[@id='CF00N20000009XIxK']"));
+	  //  Voucher.sendKeys(testd.VoucherTradeRetail);
 		
 		WebElement CustomerPackSave = driver.findElement(By.xpath(".//*[@id='topButtonRow']/input[1]"));
 		CustomerPackSave.click();
@@ -154,6 +154,7 @@ public class HomeClass {
 	//	Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ Salesforce - Unlimited Edition");
 
 	}
+
 @Test(priority = 4)
 	public void AddCustomerPackSelfie(){
 
@@ -164,7 +165,7 @@ public class HomeClass {
 		Assert.assertEquals(env.actualTitle, env.CustomerPackEditTitle);
 
 		WebElement Pack = driver.findElement(By.xpath(".//*[@id='CF00N20000009XIx9']"));
-		Pack.sendKeys(testd.PackFrame);
+		Pack.sendKeys(testd.PackFrame2);
 
 		//Select PackOption= new Select(driver.findElement(By.xpath(".//*[@id='00N20000009YYPs']")));
 		//PackOption.selectByVisibleText("Single Channel"); 
@@ -184,7 +185,8 @@ public class HomeClass {
 
 	}
 	
-	/*@Test(priority = 4)
+	
+	@Test(priority = 4)
 	public void AddCustomerPackSelfie2(){
 
 		WebElement LeadNewCustomerPack = driver.findElement(By.name("new_customer_pack"));
@@ -194,7 +196,7 @@ public class HomeClass {
 		Assert.assertEquals(env.actualTitle, env.CustomerPackEditTitle);
 
 		WebElement Pack = driver.findElement(By.xpath(".//*[@id='CF00N20000009XIx9']"));
-		Pack.sendKeys(testd.PackFrame1);
+		Pack.sendKeys(testd.PackDEL00003);
 
 		//Select PackOption= new Select(driver.findElement(By.xpath(".//*[@id='00N20000009YYPs']")));
 		//PackOption.selectByVisibleText("Single Channel"); 
@@ -213,7 +215,7 @@ public class HomeClass {
 		Assert.assertEquals(env.actualTitle, "Lead: Mr "+testd.Fname+" "+testd.Lname+" ~ Salesforce - Unlimited Edition");
 
 	}
-	@Test(priority = 4)
+/*	@Test(priority = 4)
 	public void AddCustomerPackSelfie1(){
 
 		WebElement LeadNewCustomerPack = driver.findElement(By.name("new_customer_pack"));
@@ -223,7 +225,7 @@ public class HomeClass {
 		Assert.assertEquals(env.actualTitle, env.CustomerPackEditTitle);
 
 		WebElement Pack = driver.findElement(By.xpath(".//*[@id='CF00N20000009XIx9']"));
-		Pack.sendKeys(testd.PackFrame2);
+		Pack.sendKeys(testd.PackHCD00006);
 
 		//Select PackOption= new Select(driver.findElement(By.xpath(".//*[@id='00N20000009YYPs']")));
 		//PackOption.selectByVisibleText("Single Channel"); 
@@ -404,7 +406,7 @@ public class HomeClass {
 		//Code to fetch ID	
 		env.CurrentUrl= driver.getCurrentUrl();
 		//System.out.println(env.CurrentUrl);
-		String Id= env.CurrentUrl.replace("https://emea.salesforce.com/","").replace("https://cs18.salesforce.com/","").replace("https://cs17.salesforce.com/","").replace("https://cs10.salesforce.com/","").substring(0,15);
+		String Id= env.CurrentUrl.replace("https://emea.salesforce.com/","").replace("https://cs18.salesforce.com/","").replace("https://cs86.salesforce.com/","").replace("https://cs87.salesforce.com/","").substring(0,15);
 		String Trid= Id.substring(0,15);
 		System.out.println("ID is: "+Id);
 

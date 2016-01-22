@@ -24,11 +24,11 @@ public class randomizer {
 		   { 
 		      frequencies = new CharacterFrequency[] 
 		      { 
-		         new CharacterFrequency('f', 0.8f), 
-		         new CharacterFrequency('b', 0.4f), 
-		         new CharacterFrequency('c', 0.2f), 
-		         new CharacterFrequency('d', 0.6f),
-		         new CharacterFrequency('e', 0.10f),
+		         new CharacterFrequency('g', 0.8f), 
+		         new CharacterFrequency('h', 0.4f), 
+		         new CharacterFrequency('i', 0.2f), 
+		         new CharacterFrequency('k', 0.6f),
+		         new CharacterFrequency('j', 0.10f),
 		         // ... 
 		         // Add as many as you need 
 		      }; 
